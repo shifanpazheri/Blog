@@ -1,0 +1,13 @@
+<%- include("partials/header.ejs"); -%>
+<h1>Home</h1>
+<p><%=homeStartingContent%></p>
+
+
+<% postContent.forEach(function(post){ %>
+  <h1><%=post.title%></h1>
+  <% postTruncate=post.post.slice(0,100)+"...." %>
+  <p><%=postTruncate%><a href="/posts/<%=post.title%>">Read more</a></p>
+
+<% }); %>
+
+<%- include("partials/footer.ejs"); -%>
